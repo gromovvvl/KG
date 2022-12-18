@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cg_course_v6", "cg_course_v6\cg_course_v6.vcxproj", "{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libwinbgi", "libwinbgi\libwinbgi.vcxproj", "{DAF4CC7E-F3CB-43AC-A07B-C5B6B9A4C32C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Debug|x64.ActiveCfg = Debug|x64
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Debug|x64.Build.0 = Debug|x64
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Debug|x86.ActiveCfg = Debug|Win32
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Debug|x86.Build.0 = Debug|Win32
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Release|x64.ActiveCfg = Release|x64
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Release|x64.Build.0 = Release|x64
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Release|x86.ActiveCfg = Release|Win32
+		{DF8A5EE8-17BB-4117-B64F-1A6BD3E335CD}.Release|x86.Build.0 = Release|Win32
+		{DAF4CC7E-F3CB-43AC-A07B-C5B6B9A4C32C}.Debug|x64.ActiveCfg = Debug|Win32
+		{DAF4CC7E-F3CB-43AC-A07B-C5B6B9A4C32C}.Debug|x86.ActiveCfg = Debug|Win32
+		{DAF4CC7E-F3CB-43AC-A07B-C5B6B9A4C32C}.Debug|x86.Build.0 = Debug|Win32
+		{DAF4CC7E-F3CB-43AC-A07B-C5B6B9A4C32C}.Release|x64.ActiveCfg = Release|Win32
+		{DAF4CC7E-F3CB-43AC-A07B-C5B6B9A4C32C}.Release|x86.ActiveCfg = Release|Win32
+		{DAF4CC7E-F3CB-43AC-A07B-C5B6B9A4C32C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {263B38B8-8B07-465A-85E4-CEB67EF7F583}
+	EndGlobalSection
+EndGlobal
