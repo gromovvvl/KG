@@ -123,7 +123,6 @@ public:
 		mid = new point;
 		n = 4;
 	}
-
 	polygon(point* a, point* b, point* c)
 	{
 		v = new point * [3];

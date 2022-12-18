@@ -128,7 +128,6 @@ public:
 		for (int i = 0; i < s_n; i++)
 			clr[FLAG][i] = 0;
 
-
 		clr[BR][0] = 14; // желтый
 		clr[BR][1] = 9; // голубой
 		clr[BR][2] = 10; // зеленый

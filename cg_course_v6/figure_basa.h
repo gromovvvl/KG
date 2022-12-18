@@ -7,7 +7,6 @@
 #define DR 2
 #define VS 3
 
-
 class Figure_base
 {
 

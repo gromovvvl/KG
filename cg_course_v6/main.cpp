@@ -7,7 +7,6 @@
 
 int main()
 {
-	
 	piramid* Piramid = new piramid();
 	Piramid->move(350, 400, 0);
 	Piramid->scale(0.5, 0.5, 0.5);
