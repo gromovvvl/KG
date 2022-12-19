@@ -3,7 +3,7 @@
 #include "piramid.h"
 #include "cube.h"
 #include "polygon.h"
-
+// USE_MY_COOL_FEATURE
 
 int main()
 {

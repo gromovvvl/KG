@@ -79,10 +79,10 @@ public:
 	{
 		v_n = 8;
 		s_n = 6;
-		clr = new int* [s_n];
+		side_flags = new int* [s_n];
 		for (int i = 0; i < s_n; i++)
 		{
-			clr[i] = new int[4];
+			side_flags[i] = new int[4];
 		}
 		v = new point * [s_n];
 		T = new polygon * [s_n];
@@ -126,24 +126,24 @@ public:
 		light = new point(500, -500, 0);
 
 		for (int i = 0; i < s_n; i++)
-			clr[FLAG][i] = 0;
+			side_flags[COLORED_BY][i] = 0;
 
-		clr[BR][0] = 14; // желтый
-		clr[BR][1] = 9; // голубой
-		clr[BR][2] = 10; // зеленый
-		clr[BR][3] = 12; // красный
-		clr[BR][4] = 11;  // синий
-		clr[BR][5] = 13; // белый
+		side_flags[BRIGHT][0] = 14; // желтый
+		side_flags[BRIGHT][1] = 9; // голубой
+		side_flags[BRIGHT][2] = 10; // зеленый
+		side_flags[BRIGHT][3] = 12; // красный
+		side_flags[BRIGHT][4] = 11;  // синий
+		side_flags[BRIGHT][5] = 13; // белый
 
-		clr[DR][0] = 6;  // желтый
-		clr[DR][1] = 1;  // голубой
-		clr[DR][2] = 2;  // зеленый
-		clr[DR][3] = 4;  // красный
-		clr[DR][4] = 3;  // синий
-		clr[DR][5] = 5;  // белый
+		side_flags[DARK][0] = 6;  // желтый
+		side_flags[DARK][1] = 1;  // голубой
+		side_flags[DARK][2] = 2;  // зеленый
+		side_flags[DARK][3] = 4;  // красный
+		side_flags[DARK][4] = 3;  // синий
+		side_flags[DARK][5] = 5;  // белый
 
 		for (int i = 0; i < s_n; i++)
-			clr[VS][i] = 1;
+			side_flags[VISIBLE][i] = 1;
 	}
 
 

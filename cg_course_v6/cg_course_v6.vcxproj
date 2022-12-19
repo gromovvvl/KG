@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="class_figure_base.h" />
     <ClInclude Include="cube.h" />
     <ClInclude Include="figure_basa.h" />
     <ClInclude Include="piramid.h" />

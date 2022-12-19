@@ -2,10 +2,10 @@
 #include "stdio.h"
 #include "polygon.h"
 
-#define FLAG 0
-#define BR 1
-#define DR 2
-#define VS 3
+#define BRIGHT 0
+#define DARK 1
+#define COLORED_BY 2
+#define VISIBLE 3
 
 class Figure_base
 {
@@ -65,9 +65,8 @@ public:
 	point* mid;
 	point* cam;
 	point* light;
-	int** clr;
+	int** side_flags;
 	
-
 	Figure_base()
 	{
 		s_n = 0;
@@ -78,7 +77,7 @@ public:
 		mid = nullptr;
 		cam = nullptr;
 		light = nullptr;
-		clr = nullptr;
+		side_flags = nullptr;
 	}
 
 
@@ -105,9 +104,9 @@ public:
 		for (int i = 0; i < s_n; i++)
 		{
 			if (T[i]->isSeen(ref) == 1)
-				clr[FLAG][i] = BR;
+				side_flags[COLORED_BY][i] = BRIGHT;
 			else
-				clr[FLAG][i] = DR;
+				side_flags[COLORED_BY][i] = DARK;
 		}
 	}
 
@@ -117,9 +116,9 @@ public:
 		for (int i = 0; i < s_n; i++)
 		{
 			if (T[i]->isSeen(ref) == 1)
-				clr[VS][i] = 1;
+				side_flags[VISIBLE][i] = 1;
 			else
-				clr[VS][i] = 0;
+				side_flags[VISIBLE][i] = 0;
 		}
 	}
 
@@ -128,11 +127,11 @@ public:
 		printf("=== %d ===\n", s_n);
 		for (int i = 0; i < s_n; i++)
 		{
-			if (clr[VS][i] == 1)
+			if (side_flags[VISIBLE][i] == 1)
 			{
-				int l = clr[FLAG][i];
-				printf("color %d) %d\n", i, clr[l][i]);
-				T[i]->color(clr[l][i]);
+				int l = side_flags[COLORED_BY][i];
+				printf("color %d) %d\n", i, side_flags[l][i]);
+				T[i]->color(side_flags[l][i]);
 			}
 		}
 	}

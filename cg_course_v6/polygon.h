@@ -12,11 +12,10 @@ using namespace std;
 class polygon
 {
 	float A, B, C, D;
+	point* mid;
 	point** v;
 	int n;
-	point* mid;
-	int _color;
-
+	
 	void color_by_lines_(float _xs, float _ys, float _x2, float _y2, float _x3, float _y3, int color) {
 
 		setcolor(color);
@@ -55,22 +54,22 @@ class polygon
 		}
 
 		float y1d, y2d;
-		float point = xs--;
-		point = ceil(point);
+		float current_point = xs--;
+		current_point = ceil(current_point);
 		float k1 = ((x2 <= x3 ? y2 : y3) - ys) / ((x2 <= x3 ? x2 : x3) - xs),
 			k2 = ((x2 > x3 ? y2 : y3) - ys) / ((x2 > x3 ? x2 : x3) - xs);
 		float b1 = (ys - k1 * xs),
 			b2 = (ys - k2 * xs);
 
-		while (point <= (x2 < x3 ? x2 : x3))
+		while (current_point <= (x2 < x3 ? x2 : x3))
 		{
-			y1d = k1 * point + b1;
-			if (point == round(xs))
+			y1d = k1 * current_point + b1;
+			if (current_point == round(xs))
 				y1d = ys;
 
-			y2d = k2 * point + b2;
-			line(point, ceil(y1d), point, ceil(y2d));
-			point++;
+			y2d = k2 * current_point + b2;
+			line(current_point, (y1d), current_point, (y2d));
+			current_point++;
 		}
 
 		if (x2 != x3)
@@ -78,14 +77,14 @@ class polygon
 			k1 = ((x2 >= x3 ? y2 : y3) - (x2 <= x3 ? y2 : y3)) / ((x2 >= x3 ? x2 : x3) - (x2 <= x3 ? x2 : x3));
 			b1 = ((x2 < x3 ? y2 : y3) - k1 * (x2 < x3 ? x2 : x3));
 
-			while (point <= (x2 > x3 ? x2 : x3))
+			while (current_point <= (x2 > x3 ? x2 : x3))
 			{
-				y1d = k1 * (point)+b1;
-				if (point == round(xs)) y1d = ys;
+				y1d = k1 * (current_point)+b1;
+				if (current_point == (xs)) y1d = ys;
 
-				y2d = k2 * point + b2;
-				line((point), ceil(y1d), (point), ceil(y2d));
-				point++;
+				y2d = k2 * current_point + b2;
+				line((current_point), (y1d), (current_point), (y2d));
+				current_point++;
 			}
 		}
 	}
@@ -123,6 +122,7 @@ public:
 		mid = new point;
 		n = 4;
 	}
+
 	polygon(point* a, point* b, point* c)
 	{
 		v = new point * [3];
@@ -180,32 +180,19 @@ public:
 
 	}
 
-	void rotate()
-	{
-		upd_mid();
-		for (int i = 0; i < n; i++)
-			v[i]->move(mid->x, mid->y, mid->z);
-		for (int i = 0; i < n; i++)
-			v[i]->rotate(30, X);
-		for (int i = 0; i < n; i++)
-			v[i]->move(-mid->x, -mid->y, -mid->z);
-	}
-
-
-
+	
 	void color(int c)
 	{
-		_color = c;
 		upd_mid();
 
 		if (n == 4)
 		{
-			color_by_lines_(v[0]->x, v[0]->y, v[1]->x, v[1]->y, v[2]->x, v[2]->y, _color);
-			color_by_lines_(v[0]->x, v[0]->y, v[2]->x, v[2]->y, v[3]->x, v[3]->y, _color);
+			color_by_lines_(v[0]->x, v[0]->y, v[1]->x, v[1]->y, v[2]->x, v[2]->y, c);
+			color_by_lines_(v[0]->x, v[0]->y, v[2]->x, v[2]->y, v[3]->x, v[3]->y, c);
 		}
 		if (n == 3)
 		{
-			color_by_lines_(v[0]->x, v[0]->y, v[1]->x, v[1]->y, v[2]->x, v[2]->y, _color);
+			color_by_lines_(v[0]->x, v[0]->y, v[1]->x, v[1]->y, v[2]->x, v[2]->y, c);
 		}
 	}
 	

@@ -74,12 +74,10 @@ public:
 	double z;
 	double w;
 
-
-
 	point()
 	{
-
 	}
+
 	point(double _x, double _y, double _z) : x(_x), y(_y), z(_z)
 	{
 		w = 1;
@@ -120,6 +118,18 @@ public:
 			rotateZ(_phi);
 	}
 	
+	void project_rotate()
+	{
+		rotate(45, 0);
+		rotate(-45, 1);
+	}
+
+	void unproject_rotate()
+	{
+		rotate(45, 1);
+		rotate(-45, 0);
+	}
+
 	double cx() {
 		return x;
 	}

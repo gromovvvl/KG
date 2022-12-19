@@ -13,30 +13,30 @@ class piramid: public Figure_base
 		point* ref = light;
 		double y = 600;
 
-		double t = (y - v[0]->y) / (ref->y - v[0]->y);
-		double x = (ref->x - v[0]->x) * t + v[0]->x;
-		double z = (ref->z - v[0]->z) * t + v[0]->z;
+		double k = (y - v[0]->y) / (ref->y - v[0]->y);
+		double x = (ref->x - v[0]->x) * k + v[0]->x;
+		double z = (ref->z - v[0]->z) * k + v[0]->z;
 
 		point* A = new point(x, y, z);
 
-		t = (y - v[1]->y) / (ref->y - v[1]->y);
-		x = (ref->x - v[1]->x) * t + v[1]->x;
-		z = (ref->z - v[1]->z) * t + v[1]->z;
+		k = (y - v[1]->y) / (ref->y - v[1]->y);
+		x = (ref->x - v[1]->x) * k + v[1]->x;
+		z = (ref->z - v[1]->z) * k + v[1]->z;
 		point* B = new point(x, y, z);
 
-		t = (y - v[2]->y) / (ref->y - v[2]->y);
-		x = (ref->x - v[2]->x) * t + v[2]->x;
-		z = (ref->z - v[2]->z) * t + v[2]->z;
+		k = (y - v[2]->y) / (ref->y - v[2]->y);
+		x = (ref->x - v[2]->x) * k + v[2]->x;
+		z = (ref->z - v[2]->z) * k + v[2]->z;
 		point* C = new point(x, y, z);
 
-		t = (y - v[3]->y) / (ref->y - v[3]->y);
-		x = (ref->x - v[3]->x) * t + v[3]->x;
-		z = (ref->z - v[3]->z) * t + v[3]->z;
+		k = (y - v[3]->y) / (ref->y - v[3]->y);
+		x = (ref->x - v[3]->x) * k + v[3]->x;
+		z = (ref->z - v[3]->z) * k + v[3]->z;
 		point* D = new point(x, y, z);
 
-		t = (y - v[4]->y) / (ref->y - v[4]->y);
-		x = (ref->x - v[4]->x) * t + v[4]->x;
-		z = (ref->z - v[4]->z) * t + v[4]->z;
+		k = (y - v[4]->y) / (ref->y - v[4]->y);
+		x = (ref->x - v[4]->x) * k + v[4]->x;
+		z = (ref->z - v[4]->z) * k + v[4]->z;
 		point* E = new point(x, y, z);
 
 
@@ -60,9 +60,9 @@ public:
 	{
 		v_n = 5;
 		s_n = 5;
-		clr = new int*[s_n];
+		side_flags = new int*[s_n];
 		for (int i = 0; i < s_n; i++)
-			clr[i] = new int[4];
+			side_flags[i] = new int[4];
 		
 
 		point* A = new point(0, 100, 200); // A
@@ -101,23 +101,23 @@ public:
 		light = new point(500, -500, 0);
 		
 		for (int i = 0; i < s_n; i++)
-			clr[FLAG][i] = 0;
+			side_flags[COLORED_BY][i] = 0;
 
 
-		clr[BR][0] = 14; // желтый
-		clr[BR][1] = 11; // голубой
-		clr[BR][2] = 10; // зеленый
-		clr[BR][3] = 12; // красный
-		clr[BR][4] = 9; //  синий
+		side_flags[BRIGHT][0] = 14; // желтый
+		side_flags[BRIGHT][1] = 11; // голубой
+		side_flags[BRIGHT][2] = 10; // зеленый
+		side_flags[BRIGHT][3] = 12; // красный
+		side_flags[BRIGHT][4] = 9; //  синий
 
-		clr[DR][0] = 6;
-		clr[DR][1] = 3;
-		clr[DR][2] = 2;
-		clr[DR][3] = 4;
-		clr[DR][4] = 1;
+		side_flags[DARK][0] = 6;
+		side_flags[DARK][1] = 3;
+		side_flags[DARK][2] = 2;
+		side_flags[DARK][3] = 4;
+		side_flags[DARK][4] = 1;
 
 		for (int i = 0; i < s_n; i++)
-			clr[VS][i] = 1;
+			side_flags[VISIBLE][i] = 1;
 	}
 
 };

@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="class_figure_base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="figure_basa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
