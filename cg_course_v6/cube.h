@@ -130,11 +130,9 @@ public:
 		mid = new point;
 		cam = new point(0, -1000, 500);
 		light = new point(500, -500, 0);
+
 		for (int i = 0; i < s_n; i++)
 			S[i] = new polygon(4);
-
-
-
 
 		for (int i = 0; i < s_n; i++)
 			side_flags[COLORED_BY][i] = 0;

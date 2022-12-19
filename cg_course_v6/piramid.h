@@ -39,16 +39,12 @@ class piramid: public Figure_base
 		z = (ref->z - v[4]->z) * k + v[4]->z;
 		point* E = new point(x, y, z);
 
+
 		A->project_rotate();
 		B->project_rotate();
 		C->project_rotate();
 		D->project_rotate();
 		E->project_rotate();
-		/*A->rotate(30, X);
-		B->rotate(30, X);
-		C->rotate(30, X);
-		D->rotate(30, X);
-		E->rotate(30, X);*/
 
 		S[0]->reset(A, B, C, D);
 		S[1]->reset(A, B, E);

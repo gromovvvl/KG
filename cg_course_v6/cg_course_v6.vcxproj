@@ -144,6 +144,7 @@
     <ClInclude Include="piramid.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="polygon.h" />
+    <ClInclude Include="prism.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
