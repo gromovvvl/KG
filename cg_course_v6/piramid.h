@@ -39,12 +39,16 @@ class piramid: public Figure_base
 		z = (ref->z - v[4]->z) * k + v[4]->z;
 		point* E = new point(x, y, z);
 
-
-		A->rotate(30, X);
+		A->project_rotate();
+		B->project_rotate();
+		C->project_rotate();
+		D->project_rotate();
+		E->project_rotate();
+		/*A->rotate(30, X);
 		B->rotate(30, X);
 		C->rotate(30, X);
 		D->rotate(30, X);
-		E->rotate(30, X);
+		E->rotate(30, X);*/
 
 		S[0]->reset(A, B, C, D);
 		S[1]->reset(A, B, E);
@@ -97,7 +101,7 @@ public:
 		T[4] = s5;
 
 		mid = new point;
-		cam = new point(0, -500, 1000);
+		cam = new point(0, -1000, 500);
 		light = new point(500, -500, 0);
 		
 		for (int i = 0; i < s_n; i++)

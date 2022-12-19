@@ -120,14 +120,14 @@ public:
 	
 	void project_rotate()
 	{
-		rotate(45, 0);
-		rotate(-45, 1);
+		rotate(60, 0);
+		
 	}
 
 	void unproject_rotate()
 	{
-		rotate(45, 1);
-		rotate(-45, 0);
+		rotate(-60, 0);
+		
 	}
 
 	double cx() {

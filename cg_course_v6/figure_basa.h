@@ -33,6 +33,17 @@ class Figure_base
 	{
 		rotate_each(-30, X);
 	}
+	void project_each()
+	{
+		for (int i = 0; i < v_n; i++)
+			v[i]->project_rotate();
+	}
+
+	void unproject_each()
+	{
+		for (int i = 0; i < v_n; i++)
+			v[i]->unproject_rotate();
+	}
 
 	void upd_mid()
 	{
@@ -178,9 +189,9 @@ public:
 		check_colors();
 		check_visibility();
 
-		project();
+		project_each();
 		draw_fig();
-		unproject();
+		unproject_each();
 	}
 
 };

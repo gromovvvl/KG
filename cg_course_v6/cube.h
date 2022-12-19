@@ -54,14 +54,23 @@ class cube : public Figure_base
 		point* D2 = new point(x, y, z);
 
 
-		A1->rotate(30, X);
+		/*A1->rotate(30, X);
 		B1->rotate(30, X);
 		C1->rotate(30, X);
 		D1->rotate(30, X);
 		A2->rotate(30, X);
 		B2->rotate(30, X);
 		C2->rotate(30, X);
-		D2->rotate(30, X);
+		D2->rotate(30, X);*/
+
+		A1->project_rotate();
+		B1->project_rotate();
+		C1->project_rotate();
+		D1->project_rotate();
+		A2->project_rotate();
+		B2->project_rotate();
+		C2->project_rotate();
+		D2->project_rotate();
 
 		S[0]->reset(A1, B1, C1, D1);
 		S[1]->reset(A1, B1, B2, A2);
@@ -79,6 +88,8 @@ public:
 	{
 		v_n = 8;
 		s_n = 6;
+		
+
 		side_flags = new int* [s_n];
 		for (int i = 0; i < s_n; i++)
 		{
@@ -116,14 +127,14 @@ public:
 		T[3] = s4;
 		T[4] = s5;
 		T[5] = s6;
-
+		mid = new point;
+		cam = new point(0, -1000, 500);
+		light = new point(500, -500, 0);
 		for (int i = 0; i < s_n; i++)
 			S[i] = new polygon(4);
 
 
-		mid = new point;
-		cam = new point(0, -500, 1000);
-		light = new point(500, -500, 0);
+
 
 		for (int i = 0; i < s_n; i++)
 			side_flags[COLORED_BY][i] = 0;
