@@ -135,13 +135,13 @@ public:
 
 	void draw_fig()
 	{
-		printf("=== %d ===\n", s_n);
+		//printf("=== %d ===\n", s_n);
 		for (int i = 0; i < s_n; i++)
 		{
 			if (side_flags[VISIBLE][i] == 1)
 			{
 				int l = side_flags[COLORED_BY][i];
-				printf("color %d) %d\n", i, side_flags[l][i]);
+				//printf("color %d) %d\n", i, side_flags[l][i]);
 				T[i]->color(side_flags[l][i]);
 			}
 		}
